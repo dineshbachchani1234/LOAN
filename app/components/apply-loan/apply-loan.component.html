@@ -1,0 +1,60 @@
+
+<app-login-header></app-login-header>
+<br/>
+<br/>
+<div class="col-md-10 col-lg-10">
+<img class="a1" src="assets/images/apply2.png">
+    <h3 class="add">Apply for the Loan</h3>
+    <br/>
+
+    <!-- Reactive Forms -->
+    <!-- Designing Add User Form -->
+    <form [formGroup]="addForm" (ngSubmit)="applyloan()">
+        <!-- First Name Text Box -->
+        <div class="form-group row">
+            <label for="loan_amount" class="col-lg-4 text-right font-weight-bold">
+                Loan Amount* :
+            </label>
+
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Enter your Loan amount" formControlName="loan_amount" />
+
+                <div *ngIf="submitted && addForm.controls.loan_amount.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.loan_amount.errors.required">
+                       Loan Amount is required ..!
+                    </div>
+                    <div class="text-danger" *ngIf="addForm.controls.loan_amount.errors.pattern">
+                        FirstName must begin with Capital letter and 15 characters long ..!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <!-- End of  First Name Text Box -->
+
+        <!-- Last Name Text Box -->
+        <div class="form-group row">
+            <label for="duration" class="col-lg-4 text-right font-weight-bold">
+               Duration* :
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control " placeholder="Enter duration for the Loan" formControlName="duration" />
+
+                <div *ngIf="submitted && addForm.controls.duration.errors">
+                    <div class="text-danger" *ngIf="addForm.controls.duration.errors.required">
+                        Duration is required ..!
+                    </div>
+                </div>
+            </div>
+        </div>
+       <br/>
+        <div class="text-right">
+            <button class="btn btn-success" type="submit">Save</button> &nbsp; &nbsp;
+            <button class="btn btn-danger" type="reset">Cancel</button> &nbsp; &nbsp;
+            <a class="btn btn-primary" routerLink="/login">Back to Menu</a>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,40 @@
+  <app-login-header></app-login-header>
+  <br/>
+  <br/>
+
+  <div class="col-md-12 col-lg-12 col-sm-12">
+    <img class="p1" src="assets/images/pay.png">
+    <form class="example-form" [className]="'style2'" [formGroup]="emiform" (ngSubmit)="payEmi()" >
+    
+      <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+          <mat-form-field class="example-full-width">
+              <mat-label class="i1">Pay EMI*:</mat-label>
+          
+            <input matInput placeholder="Add Balance in rupees" formControlName="emi">
+            <mat-icon matSuffix>money</mat-icon>
+            <mat-hint>Enter Numericals only</mat-hint>
+            <mat-error *ngIf="emiform.get('emi').hasError('required')">
+              EMI can't be blanked!
+            </mat-error>
+            <mat-error *ngIf="emiform.get('emi').hasError('minlength')">
+              EMI should be atleast 4 Numericals long!
+            </mat-error>
+        
+            <mat-error *ngIf="emiform.get('emi').hasError('maxlength')">
+             EMI can be atmax 20 Numericals long!
+            </mat-error>
+        
+            <mat-error *ngIf="emiform.get('emi').hasError('pattern')">
+             Invalid Input. Enter Valid EMI amount.
+            </mat-error>
+          </mat-form-field>
+
+          <br/> <br/>
+    <button class="btn btn-success" type="submit" id="save">Save</button>&nbsp; &nbsp;
+    <button class="btn btn-danger" type="reset">Cancel</button> &nbsp; &nbsp;
+    <a class="btn btn-primary" routerLink="/login">Back to Menu</a> <br/><br/>
+    </form>
+
+
+  <h1>      {{message}}   </h1>
+        </div>

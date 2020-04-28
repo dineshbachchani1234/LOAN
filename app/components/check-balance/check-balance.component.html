@@ -1,0 +1,95 @@
+<app-login-header></app-login-header>
+    <h1 class="h1">  </h1>
+<h3 class="h3">Your Current Balance is: {{message}}</h3>
+
+
+  <div class="col-md-12 col-lg-12 col-sm-12">
+  <img class="a1" src="assets/images/add.png">
+  <!-- <form [formGroup]="check" (ngSubmit)="addingbalance()">
+      <div class="form-group row">
+          <label for="balance" class="col-lg-12 text-left font-weight-bold">
+              <p class="p1">Balance</p>
+          </label><br/>
+          <div class="col-lg-12">
+              <input type="text" class="form-control " placeholder="Money in Rupees" formControlName="balance" />
+              <div *ngIf="submitted && addForm.controls.balance.errors">
+                  <div class="text-danger" *ngIf="addForm.controls.balance.errors.required">
+                      Balance is required..!!
+                  </div>
+              </div>
+          </div>
+      </div>
+      <br/> -->
+      <form class="example-form" [className]="'style2'" [formGroup]="check" (ngSubmit)="addingbalance()" >
+    
+        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+            <mat-form-field class="example-full-width">
+                <mat-label class="i1">Add Balance:</mat-label>
+            
+              <input matInput placeholder="Add Balance in rupees" formControlName="balance">
+              <mat-icon matSuffix>account_balance_wallet</mat-icon>
+              <mat-hint>User Name in characters only</mat-hint>
+              <mat-error *ngIf="check.get('balance').hasError('required')">
+                Balance is Required!
+              </mat-error>
+              <mat-error *ngIf="check.get('balance').hasError('minlength')">
+                First Name should be atleast 4 characters long!
+              </mat-error>
+          
+              <mat-error *ngIf="check.get('balance').hasError('maxlength')">
+               Balance can be atmax 20 characters long!
+              </mat-error>
+          
+              <mat-error *ngIf="check.get('balance').hasError('pattern')">
+                Invalid Input(Minimum 10rs).
+              </mat-error>
+            </mat-form-field>
+
+            <br/> <br/>
+      <button class="btn btn-success" type="submit" id="save">Save</button> &nbsp; &nbsp;
+      <button class="btn btn-danger" type="reset">Cancel</button> &nbsp; &nbsp;
+      <a class="btn btn-warning" routerLink="/login">Back to Menu</a> <br/><br/>
+      </form>
+      <!-- <div class="col-lg-6 col-md-6 col-sm-6"> -->
+        <!-- <img class="i2" src="assets/images/add2.jpg"> -->
+      <!-- </div> -->
+      </div>
+
+    
+  <!-- <mat-form-field class="example-full-width">
+    <input matInput type="color" placeholder="Choose Your Color">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="date" placeholder="Published Date">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="datetime-local" placeholder="Published Date (Local)">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="email" placeholder="Your Email Address">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="month" placeholder="Published Month">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="number" placeholder="Price">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="password" placeholder="Enter Your Password">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="search" placeholder="Find here">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="tel" placeholder="Your Phone Number">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="time" placeholder="Release Time">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="url" placeholder="Your Website">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="week" placeholder="Release Week">
+  </mat-form-field> -->
+  
